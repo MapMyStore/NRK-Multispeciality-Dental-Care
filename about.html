@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <title>NRK Multispeciality Dental Care</title>
+    <!-- Standard favicon link -->
+    <link rel="icon" type="image/x-icon" href="./Assets/img/nrk_logo.png">
+
+  <!-- ===== LOCAL SEO META TAGS ===== -->
+  <title>About DentCare – Our Story, Mission & Values | Expert Dental Care Since 2010</title>
+  <meta name="description" content="Learn about DentCare's 15+ years of exceptional dental care. Discover our mission, vision, core values, and the team behind your smile. Trusted by 10,000+ patients." />
+  <meta name="keywords" content="about DentCare, dental clinic story, dental mission, Dr. Sarah Mitchell, cosmetic dentistry, quality dental care" />
+  <meta name="author" content="DentCare" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.dentcare.com/about" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About DentCare – Our Story & Values" />
+  <meta property="og:description" content="15+ years of trusted dental care. Learn about our mission, values, and the team dedicated to your smile." />
+  <meta property="og:url" content="https://www.dentcare.com/about" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #6B46E0;
+      --primary-dark: #5535c4;
+      --primary-light: #EEE9FF;
+      --primary-bg: #F3F1FF;
+      --accent: #6B46E0;
+      --text-dark: #0F0F1A;
+      --text-body: #4B5563;
+      --text-muted: #6B7280;
+      --white: #ffffff;
+      --dark-bg: #111827;
+      --dark-footer: #0D1117;
+      --border: #E5E7EB;
+      --card-bg: #F8F7FF;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(107,70,224,0.08);
+      --shadow-md: 0 8px 40px rgba(107,70,224,0.13);
+      --font: 'DM Sans', sans-serif;
+      --text-primary: #5535c4;
+    --text-secondary: #27292d;
+    --text-light: #9ca3af;
+    --bg-white: #f1ecf4;
+    --bg-light: #a170bd;
+    --border-color: #374151;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text-dark); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== UTILS ===== */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-label { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: var(--text-dark); line-height: 1.2; margin-bottom: 16px; }
+    .section-sub { font-size: 16px; color: var(--text-body); max-width: 560px; margin: 0 auto; }
+    .text-center { text-align: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all .2s ease; border: 2px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(107,70,224,.3); }
+    .btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+    .btn-outline:hover { background: var(--primary-light); }
+    .btn-white { background: var(--white); color: var(--primary); border-color: var(--white); }
+    .btn-white:hover { background: var(--primary-light); }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    #navbar.scrolled { box-shadow: var(--shadow); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 0px; font-size: 20px; font-weight: 800; color: var(--text-dark); }
+    .nav-logo-icon { width: 45px; height: 45px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 15px; font-weight: 800; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { font-size: 15px; font-weight: 700; color: var(--text-body); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active { border-bottom: 2px solid var(--primary); padding-bottom: 2px; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text-body); }
+    .nav-phone svg { color: var(--primary); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: all .3s; }
+    .mobile-menu { display: none; flex-direction: column; gap: 0; background: white; border-top: 1px solid var(--border); padding: 16px 24px 24px; }
+    .mobile-menu a { padding: 12px 0; font-size: 16px; font-weight: 500; color: var(--text-body); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { border: none; }
+    .mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
+    .mobile-menu.open { display: flex; }
+
+    /* ===== HERO SECTION ===== */
+    #about-hero {
+      
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #f0ecff 60%, #faf9ff 100%);
+      padding: 80px 0 60px;
+      position: relative; overflow: hidden;
+    
+    }
+    .bg-decoration { position: absolute; border-radius: 50%; opacity: 0.08; pointer-events: none; }
+    .bg-dot-1 { width: 300px; height: 300px; background: #7c3aed; top: 0px; right: 0px; top:-100px }
+    .bg-blob { width: 400px; height: 400px; background: #7c3aed; bottom: -100px; left: -150px; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    #about-hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(107,70,224,.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .about-hero-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 40px; position: relative; z-index: 1; }
+    .about-hero-badge { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--border); border-radius: 100px; padding: 6px 16px 6px 8px; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 24px; box-shadow: var(--shadow); animation: slideDown .6s ease-out; }
+    .about-hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+    @keyframes slideDown { 0%{opacity:0;transform:translateY(-10px);} 100%{opacity:1;transform:translateY(0);} }
+    .about-hero-title { font-size: clamp(32px, 5vw, 54px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; animation: slideDown .6s ease-out .1s backwards; }
+    .about-hero-title span { color: var(--primary); }
+    .about-hero-desc { font-size: 15px; color: var(--text-body); max-width: 520px; margin: 0 auto; animation: slideDown .6s ease-out .2s backwards; }
+
+    /* ===== JOURNEY SECTION ===== */
+    #journey {
+      position: relative; background: white;
+    }
+    .journey-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .journey-content h3 { font-size: clamp(28px, 3.5vw, 36px); font-weight: 800; margin-bottom: 24px; line-height: 1.2; }
+    .journey-text { font-size: 14px; color: var(--text-body); line-height: 1.5; margin-bottom: 20px; }
+    .journey-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+    .stat-item { text-align: center; }
+    .stat-number { font-size: 28px; font-weight: 800; color: var(--primary); margin-bottom: 6px; }
+    .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 300; text-transform: uppercase; letter-spacing: .5px; }
+    .journey-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1; }
+    .journey-image img { width: 100%; height: 100%; object-fit: cover; }
+    .journey-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--card-bg) 0%, var(--primary-light) 100%); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-muted); }
+
+    /* ===== MISSION & VISION SECTION ===== */
+    #mission {
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #f0ecff 60%, #faf9ff 100%);
+      position: relative;
+    }
+    #mission::after {
+      content: '';
+      position: absolute; bottom: -100px; left: -100px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(107,70,224,.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; position: relative; z-index: 1; margin-top: 48px; }
+    .mission-card { background: white; padding: 40px 32px; border-radius: var(--radius-lg); box-shadow: var(--shadow); transition: all .3s ease; }
+    .mission-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .mission-icon { width: 56px; height: 56px; background: var(--primary-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .mission-icon svg { width: 28px; height: 28px; color: var(--primary); stroke-width: 1.5; }
+    .mission-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+    .mission-card p { font-size: 15px; color: var(--text-body); line-height: 1.8; }
+
+    /* ===== CORE VALUES SECTION ===== */
+    #values {
+      background: white;
+    }
+    .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .value-card { text-align: center; padding: 32px 24px; border-radius: var(--radius-lg); background: var(--card-bg); transition: all .3s ease; }
+    .value-card:hover { background: var(--primary-light); transform: translateY(-3px); }
+    .value-icon { width: 60px; height: 60px; background: linear-gradient(135deg, rgba(107,70,224,.12), rgba(107,70,224,.06)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .value-icon svg { width: 28px; height: 28px; color: var(--primary); stroke-width: 1.5; }
+    .value-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .value-card p { font-size: 13px; color: var(--text-body); line-height: 1.6; }
+
+    /* ===== FOUNDER SECTION ===== */
+    #founder {
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #f0ecff 60%, #faf9ff 100%);
+    }
+    .founder-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .founder-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1.1; }
+    .founder-image img { width: 100%; height: 100%; object-fit: cover; }
+    .founder-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--card-bg) 0%, var(--primary-light) 100%); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg); }
+    .founder-content h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 800; margin-bottom: 24px; line-height: 1.2; }
+    .founder-label { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+    .founder-quote { font-size: 16px; font-style: italic; color: var(--text-body); margin: 24px 0 28px; line-height: 1.8; padding-left: 20px; border-left: 3px solid var(--primary); }
+    .founder-name { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+    .founder-title { font-size: 13px; color: var(--primary); font-weight: 600; }
+
+    /* ===== CTA ===== */
+    #cta { background: var(--primary); padding: 80px 0; position: relative; overflow: hidden; }
+    #cta::before { content: ''; position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: rgba(255,255,255,.06); border-radius: 50%; }
+    #cta::after { content: ''; position: absolute; bottom: -80px; right: -40px; width: 400px; height: 400px; background: rgba(255,255,255,.04); border-radius: 50%; }
+    .cta-inner { text-align: center; position: relative; z-index: 1; }
+    .cta-inner h2 { font-size: clamp(28px,4vw,44px); font-weight: 900; color: white; margin-bottom: 16px; }
+    .cta-inner p { color: rgba(255,255,255,.8); font-size: 16px; max-width: 500px; margin: 0 auto 36px; }
+
+    /* ===== FOOTER ===== */
+    #footer { background: var(--dark-footer); color: rgba(255,255,255,.7); padding: 64px 0 0; }
+    .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-brand { }
+    .footer-logo { display: flex; align-items: center; gap: 0px; font-size: 20px; font-weight: 800; color: white; margin-bottom: 16px; }
+    .footer-logo-icon { width: 42px; height: 42px;  border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 800; }
+    .footer-logo-icon img {width:100%;height:100%}
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 220px; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: white; }
+    .footer-contact p { font-size: 14px; display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+    .footer-contact p svg { margin-top: 2px; flex-shrink: 0; color: var(--primary); }
+    .footer-hours { margin-top: 16px; }
+    .footer-hours h5 { font-size: 13px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .footer-hours p { font-size: 13px; margin-bottom: 4px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 13px; }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 13px; }
+    .footer-legal a:hover { color: white; }
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .doctor-profile-bg{
+      background:var(--primary-bg);
+      padding:20px;
+      padding-top:30px;
+      padding-bottom:30px;
+    }
+    .doctor-profile-container {
+            max-width: 90%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top:10px;
+        }
+ 
+        .profile-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            padding: 40px;
+            align-items: center;
+        }
+ 
+        /* IMAGE SECTION */
+        .image-section {
+            position: relative;
+        }
+ 
+        .doctor-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            object-fit: cover;
+            display: block;
+        }
+ 
+        .experience-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+ 
+        .experience-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+ 
+        /* INFO SECTION */
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+ 
+        .doctor-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 0;
+            line-height: 1.2;
+        }
+ 
+        /* QUALIFICATION BLOCK */
+        .qualification-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 0px;
+            padding: 0px;
+            
+            border-radius: 12px;
+            margin-bottom: 0px;
+        }
+
+        .block-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #9ca3af;
+            font-weight: 500;
+            margin-bottom: 6px;
+            display: block;
+        }
+ 
+        .qualification-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+ 
+        /* DESIGNATION BLOCK */
+        .designation-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 0px;
+            padding: 0px;
+            border-radius: 12px;
+            margin-bottom: 5px;
+        }
+
+        .qualification-block i,
+        .designation-block i {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6B46E0;
+            font-size: 25px;
+            flex-shrink: 0;
+        }
+
+        .qualification-block::after,
+        .designation-block::after {
+            content: '';
+            order: -1;
+        }
+ 
+        .designation-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+ 
+        /* BIO */
+        .doctor-bio {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0;
+        }
+ 
+        /* SPECIALIZATIONS */
+        /* .specializations-section {
+            border-top: 1px solid var(--primary-dark);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        } */
+ 
+        .section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+ 
+        .specializations-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .specialization-tag {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+ 
+        .specialization-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+ 
+        /* ACHIEVEMENTS */
+        .achievements-section {
+            padding-top: 20px;
+        }
+ 
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+ 
+        .achievement-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+ 
+        .achievement-icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+ 
+        .achievement-content h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+ 
+        .achievement-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+ 
+        /* CTA BUTTON */
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 50%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+ 
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+ 
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+        }
+ 
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .profile-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+ 
+            .doctor-name {
+                font-size: 28px;
+            }
+ 
+            .experience-badge {
+                top: 15px;
+                right: 15px;
+                font-size: 12px;
+                padding: 8px 14px;
+            }
+ 
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+ 
+            .specializations-list {
+                justify-content: center;
+            }
+ 
+            .cta-button {
+                margin-top: 16px;
+            }
+        }
+ 
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+ 
+            .profile-wrapper {
+                padding: 20px 16px;
+                gap: 20px;
+            }
+ 
+            .doctor-name {
+                font-size: 24px;
+            }
+ 
+            .qualification-title,
+            .designation-title {
+                font-size: 15px;
+            }
+ 
+            .doctor-bio {
+                font-size: 14px;
+            }
+ 
+            .specialization-tag {
+                font-size: 12px;
+                padding: 7px 14px;
+            }
+ 
+            .achievement-item {
+                gap: 10px;
+            }
+ 
+            .achievement-content h4 {
+                font-size: 12px;
+            }
+ 
+            .achievement-content p {
+                font-size: 13px;
+            }
+ 
+            .cta-button {
+                font-size: 15px;
+                padding: 12px 24px;
+            }
+        }
+ 
+        
+    .fade-in-up {
+      animation: fadeInUp .6s ease-out;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .section { padding: 60px 0; }
+      #about-hero { padding: 60px 0 40px; }
+      #about-hero::before { width: 250px; height: 250px; top: -80px; right: -50px; }
+      
+      .about-hero-title { font-size: 32px; }
+      .about-hero-desc { font-size: 15px; }
+
+      .journey-inner { grid-template-columns: 1fr; gap: 40px; }
+      .journey-stats { grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+      .stat-number { font-size: 24px; }
+
+      .mission-grid { grid-template-columns: 1fr; gap: 24px; }
+      .mission-card { padding: 28px 24px; }
+
+      .values-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .value-card { padding: 24px 16px; }
+
+      .founder-inner { grid-template-columns: 1fr; gap: 40px; }
+      .founder-content h2 { font-size: 24px; }
+      .founder-quote { font-size: 15px; }
+
+      #cta { padding: 60px 24px; }
+      #cta h2 { font-size: 28px; }
+      #cta p { font-size: 15px; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; }
+
+      .nav-links { gap: 20px; display: none; }
+      .nav-phone { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 480px) {
+      .section { padding: 48px 0; }
+      .container { padding: 0 16px; }
+
+      .about-hero-title { font-size: 24px; }
+      .about-hero-desc { font-size: 14px; }
+
+      .journey-stats { grid-template-columns: 1fr; }
+      .stat-number { font-size: 20px; }
+
+      .values-grid { grid-template-columns: 1fr; }
+      .value-card { padding: 20px; }
+
+      .mission-card { padding: 20px 16px; }
+
+      .founder-quote { padding-left: 16px; font-size: 14px; }
+
+      #cta h2 { font-size: 20px; }
+      #cta p { font-size: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#" class="nav-logo" aria-label="DentCare Home">
+        
+        <img class="nav-logo-icon" src="./Assets/img/nrkmultispecislitydentalcarel_logo.svg" >
+        NRK Dental
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about" class="active">About</a></li>
+        <li><a href="services.html" >Services</a></li>
+        <li><a href="index.html#team">Our Team</a></li>
+        <li><a href="index.html#testimonials">Gallery</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <!-- <a href="tel:+918248203459" class="nav-phone" aria-label="Call us at (123) 456-7890">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (123) 456-7890
+        </a> -->
+        <a href="./appointment.html" class="btn btn-primary" style="padding: 5px 10px; font-size: 13px;">Book Appointment</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#team">Our Team</a>
+    <a href="index.html#testimonials">Gallery</a>
+    <a href="#cta">Contact</a>
+    <!-- <a href="tel:+918248203459" style="color:var(--primary);">📞 (123) 456-7890</a> -->
+    <a href="./appointment.html" class="btn btn-primary">Book Appointment</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== ABOUT HERO ===== -->
+<section id="about-hero" aria-labelledby="about-heading">
+  <div class="bg-decoration bg-dot-1"></div>
+  <div class="bg-decoration bg-blob"></div>
+  <div class="container">
+    <div class="about-hero-inner">
+      <!-- <span class="about-hero-badge">About Us</span> -->
+      <h1 id="about-heading" class="about-hero-title">Our <span>Story</span></h1>
+      <p class="about-hero-desc">Delivering advanced, patient-focused dental care in Salem for over 10 years</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== JOURNEY SECTION ===== -->
+<section id="journey" class="section" aria-labelledby="journey-heading">
+  <div class="container">
+    <div class="journey-inner">
+      <div class="journey-content">
+        <span class="section-label">Our Journey</span>
+        <h2 id="journey-heading" style="margin-bottom:4px;font-size:30px;">Building Smiles in Salem</h2>
+        
+        <p class="journey-text">
+         NRK Multispeciality Dental Care was established with a vision to provide high-quality, comprehensive dental care in Salem. From the beginning, our focus has been to create a clinic where patients feel comfortable, confident, and well cared for at every stage of their treatment.
+        </p>
+        
+        <p class="journey-text">
+          Over the years, we have grown into a trusted name in dental healthcare, offering a wide range of services—from preventive and cosmetic dentistry to advanced treatments like dental implants and laser procedures. Our modern technology enables precise, efficient, and minimally invasive care.
+        What sets us apart is our patient-first approach. We prioritize painless treatments, clear communication, and a friendly environment to ensure every patient feels at ease.
+        </p>
+        <p class="journey-text">Today, we continue to serve the Salem community with dedication, focusing on transforming smiles and improving lives through better oral health.</p>
+
+        <div class="journey-stats">
+          <div class="stat-item fade-in-up">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years of Service</div>
+          </div>
+          <div class="stat-item fade-in-up">
+            <div class="stat-number">10k+</div>
+            <div class="stat-label">Patients Treated</div>
+          </div>
+          <div class="stat-item fade-in-up">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-image">
+        <div class="journey-placeholder">
+          <img src="./Assets/img/clinic-interior-random.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MISSION & VISION ===== -->
+<section id="mission" class="section" aria-labelledby="mission-heading">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">What Drives Us</span>
+      <h2 id="mission-heading" class="section-title">Mission & Vision</h2>
+    </div>
+
+    <div class="mission-grid">
+      <div class="mission-card fade-in-up">
+        <div class="mission-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+          </svg>
+        </div>
+        <h3>Our Mission</h3>
+        <p>To deliver high-quality, patient-centered dental care using advanced technology and modern techniques, while ensuring a comfortable and stress-free experience for every patient in Salem.</p>
+      </div>
+
+      <div class="mission-card fade-in-up">
+        <div class="mission-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+        </div>
+        <h3>Our Vision</h3>
+        <p>To become the most trusted dental clinic in Salem, known for clinical excellence, advanced treatments, and a commitment to creating healthy, confident smiles for life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ===== CORE VALUES ===== -->
+<section id="values" class="section" aria-labelledby="values-heading">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">What We Believe</span>
+      <h2 id="values-heading" class="section-title">Our Core Values</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card fade-in-up">
+        <div class="value-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h4>Compassion</h4>
+        <p>We focus on providing gentle, caring treatment focused on your comfort.</p>
+      </div>
+
+      <div class="value-card fade-in-up">
+        <div class="value-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h4>Excellence</h4>
+        <p>We strive for high-quality dental care with precision and expertise to provide best result.</p>
+      </div>
+
+      <div class="value-card fade-in-up">
+        <div class="value-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h4>Integrity</h4>
+        <p>We believe in clear, transparent communication and ethical dental practices you can trust.</p>
+      </div>
+
+      <div class="value-card fade-in-up">
+        <div class="value-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5a4 4 0 100-8 4 4 0 000 8z"/>
+          </svg>
+        </div>
+        <h4>Innovation</h4>
+        <p>We adopt modern technologies and advanced procedures to deliver effective treatments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Doctor Display ===== -->
+ <div class="doctor-profile-bg">
+   <div class="text-center">
+      <span class="section-label">Our Team</span>
+      <h2 id="values-heading" class="section-title">Meet Our Experts</h2>
+    </div>
+  <div class="doctor-profile-container">
+    <div class="profile-wrapper">
+        
+        <!-- LEFT SECTION: DOCTOR IMAGE -->
+        <div class="image-section">
+            <img src="./Assets/img/random-dr.png" alt="Dr. Robert Kim - Chief Dental Surgeon" class="doctor-image">
+            <div class="experience-badge">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                18+ YEARS EXPERIENCE
+            </div>
+        </div>
+ 
+        <!-- RIGHT SECTION: DOCTOR INFO -->
+        <div class="info-section">
+            
+            <!-- Doctor Name -->
+            <h1 class="doctor-name">Dr. Robert Kim</h1>
+ 
+            <!-- Qualification -->
+            <div class="qualification-block">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div>
+                <p class="block-label">Qualification</p>
+                <h3 class="qualification-title">Endodontist, DDS, FICOI</h3>
+              </div>
+            </div>
+ 
+            <!-- Designation -->
+            <div class="designation-block">
+                <i class="fa-solid fa-stethoscope"></i>
+                <div>
+                  <p class="block-label">Designation</p>
+                  <h3 class="designation-title">Chief Dental Surgeon & Founder</h3>
+                </div>
+            </div>
+ 
+            <!-- Bio -->
+            <p class="doctor-bio">
+                Dr. Robert Kim is the visionary behind our clinic. With over 18 years of clinical excellence, he has transformed thousands of smiles and built a practice rooted in trust, precision, and compassionate care. He holds advanced certifications in implantology and endodontics from leading international institutions.
+            </p>
+ 
+            <!-- Specializations -->
+            <div class="specializations-section">
+                <p class="section-label">Specializations</p>
+                <ul class="specializations-list">
+                    <li><span class="specialization-tag">Maxilo</span></li>
+                    <li><span class="specialization-tag">Root Canal Therapy</span></li>
+                    <li><span class="specialization-tag">Full-Mouth Rehabilitation</span></li>
+                    <li><span class="specialization-tag">Endodontics</span></li>
+                </ul>
+            </div>
+ 
+            <!-- Achievements -->
+            <div class="achievements-section">
+                <p class="section-label">Achievements</p>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🏅</div>
+                        <div class="achievement-content">
+                            <h4>Fellow, ICOI</h4>
+                            <p>International recognition</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-content">
+                            <h4>Best Dentist Award 2023</h4>
+                            <p>Excellence in dentistry</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🦷</div>
+                        <div class="achievement-content">
+                            <h4>500+ Implants Placed</h4>
+                            <p>Proven expertise</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">📚</div>
+                        <div class="achievement-content">
+                            <h4>Published Researcher</h4>
+                            <p>Contributing to dentistry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- CTA Button -->
+            <button class="cta-button">Book with Dr. Kim</button>
+ 
+        </div>
+    </div>
+</div>
+ </div>
+
+<!-- ===== FOUNDER MESSAGE ===== -->
+<!-- <section id="founder" class="section" aria-labelledby="founder-heading">
+  <div class="container">
+    <div class="founder-inner">
+      <div class="founder-image">
+        <div class="founder-placeholder">
+          <span>Dr. Sarah Mitchell</span>
+        </div>
+      </div>
+
+      <div class="founder-content">
+        <span class="founder-label">Founder's Message</span>
+        <h2 id="founder-heading">A Message from Our Founder</h2>
+        
+        <blockquote class="founder-quote">
+          "When I founded DentCare, I envisioned a place where patients feel truly cared for — where cutting-edge dentistry meets genuine human connection. Every day, our team works to make that vision a reality."
+        </blockquote>
+
+        <div>
+          <div class="founder-name">Dr. Sarah Mitchell</div>
+          <div class="founder-title">Founder & Lead Dentist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ===== CTA ===== -->
+<section id="cta" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+    <h2 id="cta-heading">Book Your Appointment Today</h2>
+    <p>Take the first step towards a healthier, more beautiful smile. Our team is ready to welcome you.</p>
+    <a href="./appointment.html" class="btn btn-white">Schedule Your Visit</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer" role="contentinfo" itemscope itemtype="https://schema.org/Dentist">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand text-center">
+        <div class="footer-logo text-center">
+          <div class="footer-logo-icon">
+            <img src="./Assets/img/nrk_logo.png">
+          </div>
+          <span itemprop="name">NRK Dental</span>
+        </div>
+        <p class="text-center" style = "font-size:12px; font-weight:300"itemprop="description">Providing exceptional dental carein Salem with modern technology and a compassionate approach.</br> Your smile is our priority.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="index.html#testimonials">Gallery</a></li>
+          <li><a href="index.html#footer">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">General Dentistry</a></li>
+          <li><a href="index.html#services">Cosmetic Dentistry</a></li>
+          <li><a href="index.html#services">Orthodontics</a></li>
+          <li><a href="index.html#services">Dental Implants</a></li>
+          <li><a href="index.html#services">Teeth Whitening</a></li>
+          <li><a href="index.html#services">Root Canal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">1st Floor, Valmo Office, Sarada College Rd, Ponnandigounder Nagar,</span>,
+            <span itemprop="addressLocality">LRN Colony, Salem, </span>
+            <span itemprop="postalCode"> Tamil Nadu 636007</span>
+          </span>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+918248203459" itemprop="telephone" style="color:inherit;">8248203459</a>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@dentcare.com" itemprop="email" style="color:inherit;">info@dentcare.com</a>
+        </p>
+        <div class="footer-hours">
+          <h5>Business Hours</h5>
+          <p>Mon – Sat : 10:00 AM – 8:30 PM</p>
+          <p>Sun : Closed</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="color:#6b7280">
+      <p>© <span id="year"></span> NRK Multispeciality Dental Care. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // Dynamic year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Intersection observer for fade-in animations
+  const fadeEls = document.querySelectorAll('.fade-in-up, .stat-item');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  fadeEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    fadeObserver.observe(el);
+  });
+
+ 
+</script>
+
+</body>
+</html>

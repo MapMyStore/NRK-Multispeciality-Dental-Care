@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <title>NRK Multispeciality Dental Care</title>
+    <!-- Standard favicon link -->
+    <link rel="icon" type="image/x-icon" href="./Assets/img/nrk_logo.png">
+
+  <!-- ===== LOCAL SEO META TAGS ===== -->
+  <title>Dental Services – General, Cosmetic & Orthodontic Care | DentCare City 10001</title>
+  <meta name="description" content="Explore DentCare's full range of dental services in City 10001 – General Dentistry, Cosmetic Dentistry, Orthodontics, Dental Implants, Teeth Whitening & Root Canal Therapy. Book today!" />
+  <meta name="keywords" content="dental services City 10001, general dentistry, cosmetic dentistry, orthodontics, dental implants, teeth whitening, root canal, DentCare" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.dentcare.com/services" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dental Services | DentCare – City 10001" />
+  <meta property="og:description" content="From routine check-ups to advanced treatments. Explore all services offered at DentCare." />
+  <meta property="og:url" content="https://www.dentcare.com/services" />
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "DentCare",
+    "url": "https://www.dentcare.com",
+    "telephone": "(123) 456-7890",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Dental Street, Medical District",
+      "addressLocality": "City",
+      "postalCode": "10001",
+      "addressCountry": "US"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Dental Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "General Dentistry", "description": "Comprehensive dental exams, professional cleanings, cavity fillings, and preventive treatments." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cosmetic Dentistry", "description": "Porcelain veneers, dental bonding, and complete smile makeovers." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Orthodontics", "description": "Traditional braces, clear aligners, and Invisalign for all ages." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dental Implants", "description": "Permanent tooth replacement using guided implant surgery." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Teeth Whitening", "description": "Professional-grade whitening treatments for a brighter smile." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Root Canal Therapy", "description": "Advanced root canal techniques to save natural teeth." } }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #6B46E0;
+      --primary-dark: #5535c4;
+      --primary-light: #EEE9FF;
+      --primary-bg: #F3F1FF;
+      --text-dark: #0F0F1A;
+      --text-body: #4B5563;
+      --text-muted: #6B7280;
+      --white: #ffffff;
+      --dark-footer: #0D1117;
+      --border: #E5E7EB;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow: 0 4px 24px rgba(107,70,224,.08);
+      --shadow-md: 0 8px 40px rgba(107,70,224,.13);
+      --font: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text-dark); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; object-fit: cover; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all .2s ease; border: 2px solid transparent; white-space: nowrap; font-family: var(--font); }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(107,70,224,.3); }
+    .btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+    .btn-outline:hover { background: var(--primary-light); }
+    .btn-white { background: var(--white); color: var(--primary); }
+    .btn-white:hover { background: var(--primary-light); }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    #navbar.scrolled { box-shadow: var(--shadow); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; color: var(--text-dark); }
+    .nav-logo-icon { width: 38px; height: 38px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 800; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--text-body); transition: color .2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a.active { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 2px; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text-body); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: all .3s; }
+    .mobile-menu { display: none; flex-direction: column; background: white; border-top: 1px solid var(--border); padding: 16px 24px 24px; }
+    .mobile-menu a { padding: 12px 0; font-size: 16px; font-weight: 500; color: var(--text-body); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-of-type { border: none; }
+    .mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
+    .mobile-menu.open { display: flex; }
+
+    /* ===== PAGE HERO ===== */
+    .bg-decoration { position: absolute; border-radius: 50%; opacity: 0.08; pointer-events: none; }
+    .bg-dot-1 { width: 300px; height: 300px; background: #7c3aed; top: 0px; right: 0px; top:-100px }
+    .bg-blob { width: 400px; height: 400px; background: #7c3aed; bottom: -100px; left: -150px; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    
+    #page-hero {
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #ece8ff 60%, #faf9ff 100%);
+      padding: 80px 0 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #page-hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(107,70,224,.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    #page-hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -60px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(107,70,224,.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .hero-pill {
+      display: inline-block;
+      border: 1.5px solid rgba(107,70,224,.35);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 20px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      background: rgba(107,70,224,.06);
+    }
+    .page-hero-title {
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .page-hero-title span { color: var(--primary); }
+    .page-hero-sub {
+      font-size: 17px;
+      color: var(--text-body);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ===== SERVICE ROWS ===== */
+    .service-row {
+      padding: 88px 0;
+    }
+    .service-row.alt {
+      background: var(--primary-bg);
+    }
+    .service-row-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    /* Alternate: image left on even rows */
+    .service-row.alt .service-row-inner {
+      direction: rtl;
+    }
+    .service-row.alt .service-row-inner > * {
+      direction: ltr;
+    }
+
+    .service-img-wrap {
+      position: relative;
+    }
+    .service-img {
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #d1cbe8, #b8aed9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      gap: 8px;
+      flex-direction: column;
+    }
+    /* Slight border/shadow to match design */
+    .service-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: calc(var(--radius-lg) + 8px);
+      border: 2px solid rgba(107,70,224,.12);
+      pointer-events: none;
+    }
+
+    .service-content { }
+    .service-icon-wrap {
+      width: 52px; height: 52px;
+      background: var(--primary-light);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .service-content h2 {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .service-content p {
+      font-size: 16px;
+      color: var(--text-body);
+      margin-bottom: 28px;
+      line-height: 1.7;
+      max-width: 420px;
+    }
+
+    /* ===== CTA SECTION ===== */
+    #services-cta {
+      background: var(--primary);
+      padding: 88px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #services-cta::before {
+      content: '';
+      position: absolute; top: -80px; left: -80px;
+      width: 360px; height: 360px;
+      background: rgba(255,255,255,.06);
+      border-radius: 50%;
+    }
+    #services-cta::after {
+      content: '';
+      position: absolute; bottom: -80px; right: -60px;
+      width: 400px; height: 400px;
+      background: rgba(255,255,255,.04);
+      border-radius: 50%;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-inner h2 {
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 900;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .cta-inner p {
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+      max-width: 460px;
+      margin: 0 auto 36px;
+    }
+
+    /* ===== FOOTER ===== */
+    #footer { background: var(--dark-footer); color: rgba(255,255,255,.7); padding: 64px 0 0; }
+    .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; color: white; margin-bottom: 16px; }
+    .footer-logo-icon { width: 36px; height: 36px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 13px; font-weight: 800; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 220px; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: white; }
+    .footer-contact p { font-size: 14px; display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+    .footer-contact p svg { margin-top: 2px; flex-shrink: 0; color: var(--primary); }
+    .footer-hours { margin-top: 16px; }
+    .footer-hours h5 { font-size: 13px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .footer-hours p { font-size: 13px; margin-bottom: 4px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 13px; }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 13px; }
+    .footer-legal a:hover { color: white; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .service-row { padding: 56px 0; }
+      .service-row-inner { grid-template-columns: 1fr; gap: 36px; }
+      .service-row.alt .service-row-inner { direction: ltr; }
+      .service-img { height: 280px; }
+      .service-img-wrap::before { display: none; }
+      .nav-links, .nav-phone, .nav-right .btn { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      #page-hero { padding: 56px 0 48px; }
+      .service-content p { max-width: 100%; }
+    }
+
+    /* Fade-in animation */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#" class="nav-logo" aria-label="DentCare Home">
+        
+        <img class="nav-logo-icon" src="./Assets/img/nrkmultispecislitydentalcarel_logo.svg" >
+        NRK Dental
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="index.html#team">Our Team</a></li>
+        <li><a href="index.html#testimonials">Gallery</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <!-- <a href="tel:+918248203459" class="nav-phone" aria-label="Call us at (123) 456-7890">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (123) 456-7890
+        </a> -->
+        <a href="#cta" class="btn btn-primary" style="padding: 5px 10px; font-size: 13px;">Book Appointment</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#team">Our Team</a>
+    <a href="index.html#testimonials">Gallery</a>
+    <a href="#footer">Contact</a>
+    <!-- <a href="tel:+918248203459" style="color:var(--primary);">📞 (123) 456-7890</a> -->
+    <a href="#services-cta" class="btn btn-primary">Book Appointment</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section id="page-hero" aria-labelledby="page-hero-heading">
+    <div class="bg-decoration bg-dot-1"></div>
+  <div class="bg-decoration bg-blob"></div>
+    <div class="container page-hero-inner">
+      <!-- <div class="hero-pill">Our Services</div> -->
+      <h1 id="page-hero-heading" class="page-hero-title">Dental <span>Services</span></h1>
+      <p class="page-hero-sub">Comprehensive dental care for the whole family.</br> From routine check-ups to advanced treatments for a healthier, confident smile.</p>
+    </div>
+  </section>
+
+  <!-- ===== 1. GENERAL DENTISTRY (white bg, text left / image right) ===== -->
+  <section class="service-row" id="general-dentistry" aria-labelledby="gen-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h2 id="gen-heading">Dental Implants in Salem</h2>
+          <p>Replace missing teeth permanently with advanced dental implants that look, feel, and function like natural teeth. Our implant specialists use precise techniques and modern technology to ensure safe placement, long-lasting durability, and improved oral function. Restore your smile, confidence, and chewing ability with reliable implant solutions.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="General dentistry treatment room">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span>Treatment Room</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. Root Canal Treatment in Salem (purple bg, image left / text right) ===== -->
+  <section class="service-row alt" id="cosmetic-dentistry" aria-labelledby="cos-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h2 id="cos-heading">Root Canal Treatment in Salem</h2>
+          <p>Get pain-free root canal treatment to save infected or damaged teeth and relieve severe tooth pain. Using advanced technology and gentle techniques, we remove infection, preserve your natural tooth, and restore its strength. Our procedures are quick, comfortable, and focused on long-term oral health.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Modern dental clinic reception" style="background:linear-gradient(135deg,#c8d8e8,#a8b8cf);">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <span>Our Clinic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Teeth Whitening in Salem (white bg) ===== -->
+  <section class="service-row" id="orthodontics" aria-labelledby="orth-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h2 id="orth-heading">Teeth Whitening in Salem</h2>
+          <p>Brighten your smile with professional teeth whitening treatments designed to remove stains and discoloration effectively. Our safe and advanced whitening solutions deliver visible results in a short time, helping you achieve a more confident and radiant smile with long-lasting effects.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Orthodontic treatment room">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <span>Treatment Room</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Cosmetic Dentistry in Salem (purple bg) ===== -->
+  <section class="service-row alt" id="dental-implants" aria-labelledby="imp-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h2 id="imp-heading">Cosmetic Dentistry in Salem</h2>
+          <p>Enhance your smile with personalized cosmetic dentistry solutions including veneers, bonding, and smile makeovers. We focus on improving both aesthetics and function, giving you a natural-looking, confident smile tailored to your facial features and preferences.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Dental implant consultation room" style="background:linear-gradient(135deg,#c8d8e8,#a8b8cf);">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Implant Suite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. TEETH WHITENING (white bg) ===== -->
+  <section class="service-row" id="teeth-whitening" aria-labelledby="white-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h2 id="white-heading">Orthodontics & Braces in Salem</h2>
+          <p>Straighten misaligned teeth with advanced orthodontic treatments including traditional braces and clear aligners. Our customized treatment plans help improve bite, alignment, and overall dental health while enhancing your smile and confidence.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Teeth whitening treatment room">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <span>Whitening Suite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. ROOT CANAL (purple bg) ===== -->
+  <section class="service-row alt" id="root-canal" aria-labelledby="root-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h2 id="root-heading">Dental Crowns & Bridges in Salem</h2>
+          <p>Restore damaged or missing teeth with durable crowns and bridges designed for strength and natural appearance. These restorations improve chewing ability, protect weakened teeth, and enhance your smile’s overall look and function.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Root canal therapy room" style="background:linear-gradient(135deg,#c8d8e8,#a8b8cf);">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <span>Therapy Room</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row" id="teeth-whitening" aria-labelledby="white-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h2 id="white-heading">Gum Treatment in Salem</h2>
+          <p>Treat gum diseases such as bleeding gums, infections, and periodontal issues with advanced care. Our treatments focus on restoring gum health, preventing tooth loss, and maintaining strong support for your teeth.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Teeth whitening treatment room">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <span>Whitening Suite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row alt" id="root-canal" aria-labelledby="root-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h2 id="root-heading">Tooth Extraction in Salem</h2>
+          <p>Safe and painless tooth extraction procedures performed with precision and care when removal is necessary. We ensure minimal discomfort and provide proper aftercare guidance for quick healing and recovery.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Root canal therapy room" style="background:linear-gradient(135deg,#c8d8e8,#a8b8cf);">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <span>Therapy Room</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row" id="teeth-whitening" aria-labelledby="white-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h2 id="white-heading">Pediatric Dentistry in Salem</h2>
+          <p>Gentle and friendly dental care for children focused on prevention, early diagnosis, and healthy oral habits. We create a comfortable environment to help kids feel relaxed and build positive dental experiences.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Teeth whitening treatment room">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <span>Whitening Suite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-row alt" id="root-canal" aria-labelledby="root-heading">
+    <div class="container">
+      <div class="service-row-inner fade-up">
+        <div class="service-content">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h2 id="root-heading">General Dental Checkup in Salem</h2>
+          <p>Regular dental checkups and professional cleanings to maintain optimal oral health. Early detection of dental issues helps prevent major problems and ensures a healthy, confident smile.</p>
+          <a href="./appointment.html" class="btn btn-primary">Book This Service →</a>
+        </div>
+        <div class="service-img-wrap">
+          <div class="service-img" role="img" aria-label="Root canal therapy room" style="background:linear-gradient(135deg,#c8d8e8,#a8b8cf);">
+            <svg width="40" height="40" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            <span>Therapy Room</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="services-cta" aria-labelledby="cta-heading">
+    <div class="container cta-inner">
+      <h2 id="cta-heading">Not Sure Which Service You Need?</h2>
+      <p>Book a consultation and our team will create a personalized treatment plan for you.</p>
+      <a href="./appointment.html" class="btn btn-white">Get a Consultation</a>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer" role="contentinfo" itemscope itemtype="https://schema.org/Dentist">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand text-center">
+        <div class="footer-logo text-center">
+          <div class="footer-logo-icon">
+            <img src="./Assets/img/nrk_logo.png">
+          </div>
+          <span itemprop="name">NRK Dental</span>
+        </div>
+        <p class="text-center" style = "font-size:12px; font-weight:300"itemprop="description">Providing exceptional dental carein Salem with modern technology and a compassionate approach.</br> Your smile is our priority.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#testimonials">Gallery</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">General Dentistry</a></li>
+          <li><a href="#services">Cosmetic Dentistry</a></li>
+          <li><a href="#services">Orthodontics</a></li>
+          <li><a href="#services">Dental Implants</a></li>
+          <li><a href="#services">Teeth Whitening</a></li>
+          <li><a href="#services">Root Canal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">1st Floor, Valmo Office, Sarada College Rd, Ponnandigounder Nagar,</span>,
+            <span itemprop="addressLocality">LRN Colony, Salem, </span>
+            <span itemprop="postalCode"> Tamil Nadu 636007</span>
+          </span>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+918248203459" itemprop="telephone" style="color:inherit;">8248203459</a>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@dentcare.com" itemprop="email" style="color:inherit;">info@dentcare.com</a>
+        </p>
+        <div class="footer-hours">
+          <h5>Business Hours</h5>
+          <p>Mon – Sat : 10:00 AM – 8:30 PM</p>
+          <p>Sun : Closed</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="color:#6b7280">
+      <p>© <span id="year"></span> NRK Multispeciality Dental Care. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll fade-in
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

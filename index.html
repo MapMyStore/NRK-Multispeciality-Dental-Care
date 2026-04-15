@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NRK Multispeciality Dental Care</title>
+    <!-- Standard favicon link -->
+    <link rel="icon" type="image/x-icon" href="./Assets/img/nrk_logo.png">
+
+  <!-- ===== LOCAL SEO META TAGS ===== -->
+  <title>DentCare – Expert Dental Care | General, Cosmetic & Orthodontic Dentistry | City 10001</title>
+  <meta name="description" content="DentCare offers trusted dental care in City 10001 – General Dentistry, Cosmetic Dentistry, Orthodontics, Dental Implants & more. Trusted by 10,000+ patients. Book your appointment today!" />
+  <meta name="keywords" content="dentist City 10001, dental clinic near me, cosmetic dentistry, orthodontics, dental implants, teeth whitening, root canal, family dentist, DentCare" />
+  <meta name="author" content="DentCare" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.dentcare.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DentCare – Expert Dental Care in City 10001" />
+  <meta property="og:description" content="Trusted by 10,000+ patients. Same-day appointments, modern technology & insurance accepted." />
+  <meta property="og:url" content="https://www.dentcare.com/" />
+  <meta property="og:image" content="https://www.dentcare.com/og-image.jpg" />
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "DentCare",
+    "image": "https://www.dentcare.com/logo.png",
+    "url": "https://www.dentcare.com",
+    "telephone": "(123) 456-7890",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Dental Street, Medical District",
+      "addressLocality": "City",
+      "postalCode": "10001",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.7128,
+      "longitude": -74.0060
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "10000"
+    },
+    "priceRange": "$$",
+    "description": "DentCare provides exceptional dental care using the latest technology in a comfortable environment. Services include general dentistry, cosmetic dentistry, orthodontics, dental implants, teeth whitening, and root canal therapy.",
+    "servesCuisine": "Dental Services",
+    "hasMap": "https://maps.google.com/?q=123+Dental+Street+City+10001"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #6B46E0;
+      --primary-dark: #5535c4;
+      --primary-light: #EEE9FF;
+      --primary-bg: #F3F1FF;
+      --accent: #6B46E0;
+      --text-dark: #0F0F1A;
+      --text-body: #4B5563;
+      --text-muted: #6B7280;
+      --white: #ffffff;
+      --dark-bg: #111827;
+      --dark-footer: #0D1117;
+      --border: #E5E7EB;
+      --card-bg: #F8F7FF;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(107,70,224,0.08);
+      --shadow-md: 0 8px 40px rgba(107,70,224,0.13);
+      --font: 'DM Sans', sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text-dark); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== UTILS ===== */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-label { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--primary); margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: var(--text-dark); line-height: 1.2; margin-bottom: 16px; }
+    .section-sub { font-size: 16px; color: var(--text-body); max-width: 560px; margin: 0 auto; }
+    .text-center { text-align: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 12px 24px rgba(124, 58, 237, 0.3); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+    .btn-outline:hover { background: rgba(124, 58, 237, 0.05); transform: translateY(-2px); }
+    .btn-white { background: var(--white); color: var(--primary); border-color: var(--white); }
+    .btn-white:hover { background: var(--primary-light); }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    #navbar.scrolled { box-shadow: var(--shadow); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 0px; font-size: 20px; font-weight: 800; color: var(--text-dark); }
+    .nav-logo-icon { width: 45px; height: 45px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 15px; font-weight: 800; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { font-size: 15px; font-weight: 700; color: var(--text-body); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active { border-bottom: 2px solid var(--primary); padding-bottom: 2px; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text-body); }
+    .nav-phone svg { color: var(--primary); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: all .3s; }
+    .mobile-menu { display: none; flex-direction: column; gap: 0; background: white; border-top: 1px solid var(--border); padding: 16px 24px 24px; }
+    .mobile-menu a { padding: 12px 0; font-size: 16px; font-weight: 500; color: var(--text-body); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { border: none; }
+    .mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
+    .mobile-menu.open { display: flex; }
+
+    /* ===== HERO ===== */
+    #hero {
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #f0ecff 60%, #faf9ff 100%);
+      padding: 80px 0 60px;
+      position: relative; overflow: hidden;
+    }
+    .bg-decoration { position: absolute; border-radius: 50%; opacity: 0.08; pointer-events: none; }
+    .bg-dot-1 { width: 40px; height: 40px; background: #7c3aed; top: 80px; left: 180px; }
+    .bg-dot-2 { width: 300px; height: 300px; background: #7c3aed; top: 0px; right: 0px; top:-100px }
+    .bg-blob { width: 400px; height: 400px; background: #7c3aed; bottom: -100px; left: -150px; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    .hero-container { max-width: 1160px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; }
+    .hero-left { z-index: 2; display: flex; flex-direction: column; gap: 12px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 6px 12px; background: rgba(124, 58, 237, 0.1); border: 2px solid #7c3aed; border-radius: 30px; font-size: 12px; font-weight: 400; color: #6b21a8; margin-bottom: 0; box-shadow: none; }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; background: #7c3aed; border-radius: 50%; display: block; }
+    .hero-title { font-size: 52px; font-weight: 800; line-height: 1.0; color: #1f2937; margin-bottom: 8px; margin-top: 15px; }
+    .hero-title .highlight { color: #7c3aed; display: block; font-size: 56px;line-height: 1.1; }
+    .hero-desc { font-size: 14px; color: #6b7280; line-height: 1.6; max-width: 500px; margin-bottom: 10px; }
+    .hero-checks { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-bottom: 0; margin-bottom:17px;}
+    .hero-check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #374151; font-weight: 300; }
+    /* .hero-check::before { content: '✓'; width: 20px; height: 20px; background: #7c3aed; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; flex-shrink: 0; } */
+    .hero-check svg { display: none; }
+    .hero-btns { display: flex; gap: 12px; align-items: center; margin-bottom: 0; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 32px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(124, 58, 237, 0.2); }
+    .hero-stat { display: flex; flex-direction: column; gap: 4px; }
+    .stat-val { font-size: 28px; font-weight: 700; color: #7c3aed; }
+    .stat-label { font-size: 13px; color: #6b7280; font-weight: 400; margin-top: 0; }
+    .hero-image-wrap { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; background: none; padding: 0; }
+    .hero-img-wrapper { position: relative; width: 100%; max-width: 500px; }
+    .hero-img-container { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(124, 58, 237, 0.15); aspect-ratio: 4/3; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 24px; }
+    .hero-img-placeholder { width: 100%; height: 100%; border-radius: 24px; background: linear-gradient(135deg,#d1cbe8,#b8aed9); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; gap: 8px; font-size: 14px; font-weight: 600; }
+    .hero-img-placeholder svg { opacity: .7; }
+    .hero-rating { position: absolute; bottom: 24px; left: 20px; background: white; padding: 8px 12px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); display: flex; flex-direction: column; gap: 0px; z-index: 10; }
+    .hero-rating-val { font-size: 28px; font-weight: 700; color: #7c3aed; display: flex; align-items: center; gap: 4px; }
+    .hero-rating-star { color: #7c3aed; font-size: 20px; }
+    .hero-rating-label { font-size: 12px; color: #9ca3af; font-weight: 500; }
+
+    /* ===== ABOUT ===== */
+    #about { background: white; }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img-placeholder { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(124, 58, 237, 0.15); aspect-ratio: 4/3; width:100%;height:100%; }
+    .about-img-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-text .section-title { text-align: left; }
+    .about-text p { color: var(--text-body); margin-bottom: 16px; font-size:15px; }
+    .about-text .btn { margin-top: 8px; }
+
+    /* ===== SERVICES ===== */
+    #services { background: var(--primary-bg); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .service-card { background: white; border-radius: var(--radius); padding: 32px 28px; border: 1px solid var(--border); transition: transform .2s, box-shadow .2s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .service-icon { width: 48px; height: 48px; background: var(--primary-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 20px; }
+    .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: var(--text-body); margin-bottom: 20px; }
+    .service-link { font-size: 14px; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 4px; }
+    .service-link:hover { gap: 8px; }
+
+    /* ===== WHY CHOOSE US ===== */
+    #why { background: white; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 56px; }
+    .why-card { text-align: center; padding: 24px 16px; }
+    .why-icon { width: 64px; height: 64px; background: var(--primary-light); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--primary); margin: 0 auto 20px; }
+    .why-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .why-card p { font-size: 14px; color: var(--text-body); }
+
+    /* ===== TEAM ===== */
+    #team { background: var(--primary-bg); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+    .team-card { background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); transition: box-shadow .2s; }
+    .team-card:hover { box-shadow: var(--shadow-md); }
+    .team-photo { width: 100%; height: 260px; object-fit: cover; background: linear-gradient(135deg,#e0daea,#c8bfe0); display: flex; align-items: center; justify-content: center; color: #8870c0; font-size: 48px; }
+    .team-body { padding: 24px; text-align: center; }
+    .team-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+    .team-role { font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 10px; }
+    .team-body p { font-size: 13px; color: var(--text-body); }
+    .team-btn-wrap { text-align: center; margin-top: 40px; }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials { background: white; }
+    .testi-carousel-wrap { position: relative; margin-top: 56px; }
+    .testi-carousel { display: flex; gap: 24px; overflow: hidden; }
+    .testi-grid { display: flex; gap: 20px; transition: transform 0.5s ease; width: 100%; }
+    .testi-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; position: relative; flex: 0 0 calc(33.333% - 16px); min-width: calc(33.333% - 16px); }
+    .testi-stars { color: #F59E0B; font-size: 16px; margin-bottom: 14px; }
+    .testi-quote { position: absolute; top: 20px; right: 20px; color: var(--primary-light); font-size: 36px; line-height: 1; font-family: Georgia,serif; }
+    .testi-card p { font-size: 14px; color: var(--text-body); margin-bottom: 16px; font-style: italic; }
+    .testi-author { font-size: 14px; font-weight: 700; }
+    .carousel-controls { display: flex; justify-content: center; gap: 16px; margin-top: 32px; }
+    .carousel-btn { width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--primary); background: transparent; color: var(--primary); cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+    .carousel-btn:hover { background: var(--primary); color: white; transform: scale(1.1); }
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.3s; }
+    .dot.active { background: var(--primary); width: 24px; border-radius: 5px; }
+
+    /* ===== CTA ===== */
+    #cta { background: var(--primary); padding: 80px 0; position: relative; overflow: hidden; }
+    #cta::before { content: ''; position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: rgba(255,255,255,.06); border-radius: 50%; }
+    #cta::after { content: ''; position: absolute; bottom: -80px; right: -40px; width: 400px; height: 400px; background: rgba(255,255,255,.04); border-radius: 50%; }
+    .cta-inner { text-align: center; position: relative; z-index: 1; }
+    .cta-inner h2 { font-size: clamp(28px,4vw,44px); font-weight: 900; color: white; margin-bottom: 16px; }
+    .cta-inner p { color: rgba(255,255,255,.8); font-size: 16px; max-width: 500px; margin: 0 auto 36px; }
+
+    /* ===== FOOTER ===== */
+    #footer { background: var(--dark-footer); color: rgba(255,255,255,.7); padding: 64px 0 0; }
+    .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-brand { }
+    .footer-logo { display: flex; align-items: center; gap: 0px; font-size: 20px; font-weight: 800; color: white; margin-bottom: 16px; }
+    .footer-logo-icon { width: 42px; height: 42px;  border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 800; }
+    .footer-logo-icon img {width:100%;height:100%}
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 220px; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: white; }
+    .footer-contact p { font-size: 14px; display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+    .footer-contact p svg { margin-top: 2px; flex-shrink: 0; color: var(--primary); }
+    .footer-hours { margin-top: 16px; }
+    .footer-hours h5 { font-size: 13px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .footer-hours p { font-size: 13px; margin-bottom: 4px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 13px; }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 13px; }
+    .footer-legal a:hover { color: white; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .hero-container { grid-template-columns: 1fr; gap: 24px; padding: 32px 20px; }
+      .hero-image-wrap { order: 2; }
+      .hero-img-placeholder { height: 300px; }
+      .hero-stats { gap: 32px; flex-wrap: wrap; }
+      .hero-title { font-size: 36px; }
+      .hero-title .highlight { font-size: 36px; }
+      .hero-desc { font-size: 16px; max-width: 100%; margin-bottom: 16px; }
+      .hero-checks { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .hero-btns { flex-direction: column; align-items: flex-start; width: 100%; gap: 10px; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+      .stat-val { font-size: 28px; }
+      .bg-blob { display: none; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-placeholder { height: 300px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .team-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .testi-grid { gap: 24px; }
+      .testi-card { flex: 0 0 calc(50% - 12px); min-width: calc(50% - 12px); }
+      .testi-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .nav-links, .nav-phone, .nav-right .btn { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 480px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .hero-checks { gap: 12px; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { justify-content: center; }
+      .testi-card { flex: 0 0 100%; min-width: 100%; }
+    }
+
+    .btn.btn-primary-gradient,
+    .btn.btn-secondary-gradient {
+        position: relative;
+        overflow: hidden;
+        border: none;
+        color: #FFFFFF;
+        z-index: 1;
+        background: var(--primary);
+    }
+
+    .btn.btn-primary-gradient::after,
+    .btn.btn-secondary-gradient::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .btn.btn-primary-gradient::after {
+        background: linear-gradient(to bottom right, var(--primary-dark), var(--primary-light));
+    }
+
+    .btn.btn-secondary-gradient::after {
+        background: linear-gradient(to bottom right, var(--primary-light), var(--primary-dark));
+    }
+
+    .btn.btn-primary-gradient:hover::after,
+    .btn.btn-secondary-gradient:hover::after {
+        opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#" class="nav-logo" aria-label="DentCare Home">
+        
+        <img class="nav-logo-icon" src="./Assets/img/nrkmultispecislitydentalcarel_logo.svg" >
+        NRK Dental
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#testimonials">Gallery</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <!-- <a href="tel:+918248203459" class="nav-phone" aria-label="Call us at (123) 456-7890">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (123) 456-7890
+        </a> -->
+        <a href="./appointment.html" class="btn btn-primary" style="padding: 5px 10px; font-size: 13px;">Book Appointment</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Our Team</a>
+    <a href="#testimonials">Gallery</a>
+    <a href="#footer">Contact</a>
+    <!-- <a href="tel:+918248203459" style="color:var(--primary);padding: 10px 24px; font-size: 14px;">📞 (123) 456-7890</a> -->
+    <a href="./appointment.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">Book Appointment</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<main>
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="bg-decoration bg-dot-1"></div>
+  <div class="bg-decoration bg-blob"></div>
+  <div class="bg-decoration bg-dot-2"></div>
+  <div class="hero-container">
+    <div class="hero-left">
+      <div class="hero-badge">Accepting New Patients</div>
+      <h1 id="hero-heading" class="hero-title">
+  Your Smile Deserves <span class="highlight">Expert Dental Care</span> 
+  in Salem
+</h1>
+      <p class="hero-desc">Trusted by over 5,000 patients, we are a top-rated dental clinic in Salem delivering advanced dental treatments, painless procedures, and personalized care using modern technology.</p>
+      <div class="hero-checks" aria-label="Key features">
+        <div class="hero-check"><i class="fa-regular fa-circle-check" style = "color: #7c3aed"></i>Same-Day Appointments</div>
+        <div class="hero-check"><i class="fa-regular fa-circle-check" style = "color: #7c3aed"></i>10+ Years of Expertise</div>
+        <div class="hero-check"><i class="fa-regular fa-circle-check" style = "color: #7c3aed"></i>Advanced Technology</div>
+      </div>
+      <div class="hero-btns">
+        <a href="./appointment.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">Book Appointment</a>
+        <a href="tel:+918248203459" style="padding: 10px 24px; font-size: 14px;" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
+      </div>
+      <div class="hero-stats" role="list" aria-label="Practice statistics">
+        <div class="hero-stat" role="listitem">
+          <div class="stat-val">5K+</div>
+          <div class="stat-label">Happy Patients</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="stat-val">10+</div>
+          <div class="stat-label">Years of Trusted Care</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="stat-val">5 <i class="fa-regular fa-star" style="font-size:18px; vertical-align: middle;"></i></div>
+          <div class="stat-label">Google Rated </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-img-wrapper">
+        <div class="hero-img-container">
+          <img src="./Assets/img/clinic-interior-random.png" alt="Modern dental clinic treatment room" class="hero-img">
+        </div>
+        <div class="hero-rating" aria-label="4.9 star Google Rating">
+          <div class="hero-rating-val">5.0 <span class="hero-rating-star"><i class="fa-solid fa-star"></i></span></div>
+          <div class="hero-rating-label">Google Rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-img-wrap">
+        <div class="about-img-placeholder" role="img" aria-label="DentCare modern reception area">
+          <img src="./Assets/img/clinic-interior-random.png">
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">About Us</div>
+        <h2 id="about-heading" class="section-title">Trusted Multispeciality Dental Care in Salem</h2>
+        <p>At NRK Multispeciality Dental Care, we are committed to delivering high-quality dental treatments tailored to every patient’s needs. Located in Hastampatti, Salem, our clinic combines modern dental technology with compassionate care to ensure a comfortable and stress-free experience.</p>
+        <p>From routine check-ups to advanced procedures like dental implants and oral surgery, our experienced team ensures precise diagnosis and effective treatment. We believe in clear communication, painless procedures, and long-term oral health.</p>
+        
+        <a href="./about.html" class="btn btn-outline" style="margin-top:8px;padding: 10px 24px; font-size: 14px;">Get to Know Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="section" aria-labelledby="services-heading">
+  <div class="container ">
+    <div class="section-label text-center">Our Services</div>
+    <h2 id="services-heading " class="section-title text-center">Comprehensive Dental Services in Salem</h2>
+    <p class="section-sub text-center">We offer comprehensive dental services in Salem, from preventive care to advanced treatments for complete oral health.</p>
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <i class="fa-solid fa-tooth" style="font-size:24px;"></i>
+        </div>
+        <h3>Dental Implants</h3>
+        <p>Permanent solution for missing teeth with natural look and strong functionality. Restore your smile and confidence with advanced implant technology.</p>
+        <a href="./services.html" class="service-link">Learn More →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+        <i class="fa-solid fa-tooth" style="font-size:24px;"></i>
+        </div>
+        <h3>Root Canal Treatment</h3>
+        <p>Pain-free root canal treatment to save infected teeth and eliminate discomfort using modern techniques and precision care.</p>
+        <a href="./services.html" class="service-link">Learn More →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <i class="fa-solid fa-tooth" style="font-size:24px;"></i>
+        </div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional teeth whitening treatments to brighten your smile instantly with safe, long-lasting results.</p>
+        <a href="./services.html" class="service-link">Learn More →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <i class="fa-solid fa-tooth" style="font-size:24px;"></i>
+        </div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Enhance your smile with veneers, bonding, and smile makeovers designed for natural and aesthetic results.</p>
+        <a href="./services.html" class="service-link">Learn More →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <i class="fa-solid fa-tooth" style="font-size:24px;"></i>
+        </div>
+        <h3>Orthodontics (Braces & Aligners)</h3>
+        <p>Correct misaligned teeth with braces or clear aligners for a perfectly aligned and confident smile.</p>
+        <a href="./services.html" class="service-link">Learn More →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <i class="fa-solid fa-tooth" style="font-size:24px;"></i>
+        </div>
+        <h3>General Dentistry</h3>
+        <p>Routine check-ups, cleanings, and preventive care to maintain strong, healthy teeth and avoid future dental issues.</p>
+        <a href="./services.html" class="service-link">Learn More →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section id="why" class="section" aria-labelledby="why-heading">
+  <div class="container text-center">
+    <div class="section-label">Why Choose Us</div>
+    <h2 id="why-heading" class="section-title">The DentCare Difference</h2>
+    <p class="section-sub text-center">Providing advanced dental treatments in Salem with trusted care, comfort, and lasting results.</p>
+    <div class="why-grid">
+
+      <div class="why-card">
+  <div class="why-icon" aria-hidden="true">
+    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+  </div>
+  <h3>Experienced Professionals</h3>
+  <!-- <p>Our skilled dentists bring years of clinical expertise in advanced dental treatments, ensuring accurate diagnosis, effective care, and long-lasting results for every patient.</p> -->
+<p>Skilled dentists delivering precise, effective treatments with proven expertise.</p></div>
+
+<div class="why-card">
+  <div class="why-icon" aria-hidden="true">
+    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  </div>
+  <h3>Advanced Technology</h3>
+  <!-- <p>We use modern dental technology including digital diagnostics and painless treatment methods to provide precise, comfortable, and efficient dental care.</p> -->
+<p>Cutting-edge technology for precise, painless and efficient dental care.</p>
+</div>
+
+<!-- <div class="why-card">
+  <div class="why-icon" aria-hidden="true">
+    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+  </div>
+  <h3>Personalized Treatment Plans</h3>
+  <p>Every smile is unique. We design customized treatment plans based on your dental condition, lifestyle, and goals for the best possible outcomes.</p>
+</div> -->
+
+<div class="why-card">
+  <div class="why-icon" aria-hidden="true">
+    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+  </div>
+  <h3>Hygienic Environment</h3>
+  <p>Safe, clean, and stress-free environment for a comfortable dental experience.</p>
+  <!-- <p>Our clinic maintains strict hygiene protocols and a calm, patient-friendly atmosphere to ensure a safe, stress-free dental experience.</p> -->
+</div>
+
+<div class="why-card">
+  <div class="why-icon" aria-hidden="true">
+    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 00-3-3.87"/><path d="M9 20H4v-2a4 4 0 013-3.87"/><circle cx="12" cy="7" r="4"/></svg>
+  </div>
+  <h3>Highly Rated by Patients</h3>
+  <p>Trusted by 5K+ satisfied patients in Salem for quality care and positive results.</p>
+  <!-- <p>Trusted by hundreds of happy patients in Salem, we are known for quality treatment, friendly care, and consistently positive patient experiences.</p> -->
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team" class="section" aria-labelledby="team-heading">
+  <div class="container text-center">
+    <div class="section-label">Our Team</div>
+    <h2 id="team-heading" class="section-title">Meet Our Dental Experts</h2>
+    <p class="section-sub">Our dedicated team of professionals is committed to providing you with the highest standard of dental care.</p>
+    <div class="team-grid">
+
+      <article class="team-card" itemscope itemtype="https://schema.org/Person">
+        <div class="team-photo" role="img" aria-label="Dr. Sarah Mitchell, Lead Dentist DDS">👩‍⚕️</div>
+        <div class="team-body">
+          <h3 itemprop="name">Dr. Sarah Mitchell</h3>
+          <p class="team-role" itemprop="jobTitle">Lead Dentist, DDS</p>
+          <p itemprop="description">Specializing in cosmetic and restorative dentistry with over 12 years of experience.</p>
+        </div>
+      </article>
+
+      <article class="team-card" itemscope itemtype="https://schema.org/Person">
+        <div class="team-photo" role="img" aria-label="Dr. James Rodriguez, Orthodontist DMD">👨‍⚕️</div>
+        <div class="team-body">
+          <h3 itemprop="name">Dr. James Rodriguez</h3>
+          <p class="team-role" itemprop="jobTitle">Orthodontist, DMD</p>
+          <p itemprop="description">Expert in modern orthodontic solutions including Invisalign and ceramic braces.</p>
+        </div>
+      </article>
+
+      <article class="team-card" itemscope itemtype="https://schema.org/Person">
+        <div class="team-photo" role="img" aria-label="Dr. Emily Chen, Dental Hygienist RDH">👩‍⚕️</div>
+        <div class="team-body">
+          <h3 itemprop="name">Dr. Emily Chen</h3>
+          <p class="team-role" itemprop="jobTitle">Dental Hygienist, RDH</p>
+          <p itemprop="description">Passionate about preventive care and patient education for lifelong oral health.</p>
+        </div>
+      </article>
+
+    </div>
+    <div class="team-btn-wrap">
+      <a href="#footer" class="btn btn-outline">View All Team Members</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" class="section" aria-labelledby="testi-heading">
+  <div class="container text-center">
+    <div class="section-label">Testimonials</div>
+    <h2 id="testi-heading" class="section-title">What Our Patients Say</h2>
+    <div class="testi-carousel-wrap">
+      <div class="testi-carousel">
+        <div class="testi-grid" id="testiCarousel">
+
+          <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+            <div class="testi-stars" aria-label="5 stars" style="color:var(--primary)">★★★★★</div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p itemprop="reviewBody">"I had a great experience at NRK MULTISPECIALITY DENTAL CARE. The clinic was very clean and well-organized. Dr. Ranjith was patient and explained everything clearly before starting the treatment. Highly recommend this place if you're looking for quality dental care."</p>
+            <footer class="testi-author" itemprop="author">Hari Haran</footer>
+          </blockquote>
+
+          <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+            <div class="testi-stars" aria-label="5 stars" style="color:var(--primary)">★★★★★</div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p itemprop="reviewBody">"I have visited NRK dental clinic for four different times, for various dental problems, like cavity filling, dental scaling, tooth extraction as well as dental crown fixing. I would like to say that, the dentist has ample amount of skill in addressing all issues. Dentist is very knowledgeable, technically sound and his specific acumen are very commendable. "</p>
+            <footer class="testi-author" itemprop="author">S Kannan</footer>
+          </blockquote>
+
+          <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+            <div class="testi-stars" aria-label="5 stars" style="color:var(--primary)">★★★★★</div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p itemprop="reviewBody">"I had a fantastic experience at NKR Multi Speciality Dental Care. Dr. Ranjith Kumar is an excellent dentist. He's very skilled and made sure I was comfortable throughout my entire appointment. I highly recommend him and this clinic!"</p>
+            <footer class="testi-author" itemprop="author">Prabhu Jeeva</footer>
+          </blockquote>
+
+          <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+            <div class="testi-stars" aria-label="5 stars" style="color:var(--primary)">★★★★★</div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p itemprop="reviewBody">"
+I hade a great experience at the clinic. The doctor was patient and answered all my questions. Treatment was professional. Reasonable pricing and high-quality service. The clinic is well maintained and appointments are handled on time."</p>
+            <footer class="testi-author" itemprop="author">Vishnu</footer>
+          </blockquote>
+
+          <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+            <div class="testi-stars" aria-label="5 stars" style="color:var(--primary)">★★★★★</div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p itemprop="reviewBody">"They explained the entire procedure step by step and did everything very patiently and in a friendly manner. I had a root canal and a new tooth fixed in the lower jaw. The treatment was comfortable. Really happy with the care and results."</p>
+            <footer class="testi-author" itemprop="author">
+Kalai Karthik</footer>
+          </blockquote>
+
+          <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+            <div class="testi-stars" aria-label="5 stars" style="color:var(--primary)">★★★★★</div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p itemprop="reviewBody">"Dr. Ranjith and Dr.Nithya are well trained post graduate doctors who ensures patients are well taken care of . Be it implants , tooth removal , replacement or RCT , NRK dental clinic is the one spot solution . Dr. Baskar who does RCT is experienced and finishes the procedure in short time painlessly ."</p>
+            <footer class="testi-author" itemprop="author">Aditya D</footer>
+          </blockquote>
+
+          <blockquote class="testi-card" itemscope itemtype="https://schema.org/Review">
+            <div class="testi-stars" aria-label="5 stars" style="color:var(--primary)">★★★★★</div>
+            <span class="testi-quote" aria-hidden="true">"</span>
+            <p itemprop="reviewBody">"Dr. Ranjith and Dr.Nithya are well trained post graduate doctors who ensures patients are well taken care of . Be it implants , tooth removal , replacement or RCT , NRK dental clinic is the one spot solution . Dr. Baskar who does RCT is experienced and finishes the procedure in short time painlessly ."</p>
+            <footer class="testi-author" itemprop="author">Aditya D</footer>
+          </blockquote>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="testiPrev" aria-label="Previous testimonials">❮</button>
+        <button class="carousel-btn" id="testiNext" aria-label="Next testimonials">❯</button>
+      </div>
+      <div class="carousel-dots" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="cta" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+    <h2 id="cta-heading">Book Your Appointment Today</h2>
+    <p>Take the first step towards a healthier, more beautiful smile. Our team is ready to welcome you.</p>
+    <a href="./appointment.html" class="btn btn-white">Schedule Your Visit</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer" role="contentinfo" itemscope itemtype="https://schema.org/Dentist">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand text-center">
+        <div class="footer-logo text-center">
+          <div class="footer-logo-icon">
+            <img src="./Assets/img/nrk_logo.png">
+          </div>
+          <span itemprop="name">NRK Dental</span>
+        </div>
+        <p class="text-center" style = "font-size:12px; font-weight:300"itemprop="description">Providing exceptional dental carein Salem with modern technology and a compassionate approach.</br> Your smile is our priority.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#testimonials">Gallery</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">General Dentistry</a></li>
+          <li><a href="#services">Cosmetic Dentistry</a></li>
+          <li><a href="#services">Orthodontics</a></li>
+          <li><a href="#services">Dental Implants</a></li>
+          <li><a href="#services">Teeth Whitening</a></li>
+          <li><a href="#services">Root Canal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">1st Floor, Valmo Office, Sarada College Rd, Ponnandigounder Nagar,</span>,
+            <span itemprop="addressLocality">LRN Colony, Salem, </span>
+            <span itemprop="postalCode"> Tamil Nadu 636007</span>
+          </span>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+918248203459" itemprop="telephone" style="color:inherit;">8248203459</a>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@dentcare.com" itemprop="email" style="color:inherit;">info@dentcare.com</a>
+        </p>
+        <div class="footer-hours">
+          <h5>Business Hours</h5>
+          <p>Mon – Sat : 10:00 AM – 8:30 PM</p>
+          <p>Sun : Closed</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="color:#6b7280">
+      <p>© <span id="year"></span> NRK Multispeciality Dental Care. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // Dynamic year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id], footer[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => observer.observe(s));
+
+  // Fade-in on scroll
+  const fadeEls = document.querySelectorAll('.service-card, .why-card, .team-card, .testi-card, .hero-stat');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = `opacity .5s ease ${i * 0.07}s, transform .5s ease ${i * 0.07}s`;
+    fadeObserver.observe(el);
+  });
+
+  // Testimonials Carousel
+  const testiCarousel = document.getElementById('testiCarousel');
+  const testiCards = document.querySelectorAll('.testi-card');
+  const testiPrev = document.getElementById('testiPrev');
+  const testiNext = document.getElementById('testiNext');
+  const testiDots = document.getElementById('testiDots');
+
+  const cardsPerView = 3;
+  const cardWidth = 100 / cardsPerView;
+  let currentIndex = 0;
+
+  // Create dots
+  const numSlides = Math.ceil(testiCards.length / cardsPerView);
+  for (let i = 0; i < numSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = `dot ${i === 0 ? 'active' : ''}`;
+    dot.addEventListener('click', () => goToSlide(i));
+    testiDots.appendChild(dot);
+  }
+
+  function updateCarousel() {
+    const offset = -currentIndex * (cardWidth * cardsPerView);
+    testiCarousel.style.transform = `translateX(${offset}%)`;
+    
+    // Update dots
+    document.querySelectorAll('.dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % numSlides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + numSlides) % numSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  testiNext.addEventListener('click', nextSlide);
+  testiPrev.addEventListener('click', prevSlide);
+</script>
+
+</body>
+</html>
