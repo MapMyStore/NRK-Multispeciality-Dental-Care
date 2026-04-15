@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentCare Gallery - Our Clinic & Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #7C3AED;
+            --light-lavender: #F3E8FF;
+            --dark-gray: #1F2937;
+            --text-gray: #6B7280;
+            --border-gray: #E5E7EB;
+            --white: #FFFFFF;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+           /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #6B46E0;
+      --primary-dark: #5535c4;
+      --primary-light: #EEE9FF;
+      --primary-bg: #F3F1FF;
+      --accent: #6B46E0;
+      --text-dark: #0F0F1A;
+      --text-body: #4B5563;
+      --text-muted: #6B7280;
+      --white: #ffffff;
+      --dark-bg: #111827;
+      --dark-footer: #0D1117;
+      --border: #E5E7EB;
+      --card-bg: #F8F7FF;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(107,70,224,0.08);
+      --shadow-md: 0 8px 40px rgba(107,70,224,0.13);
+      --font: 'DM Sans', sans-serif;
+      --text-primary: #5535c4;
+    --text-secondary: #27292d;
+    --text-light: #9ca3af;
+    --bg-white: #f1ecf4;
+    --bg-light: #a170bd;
+    --border-color: #374151;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text-dark); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== UTILS ===== */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-label { font-size: 17px; font-weight: 700; letter-spacing: 0; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
+    .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: var(--text-dark); line-height: 1.2; margin-bottom: 16px; margin-top:10px; }
+    .section-sub { font-size: 16px; color: var(--text-body); max-width: 560px; margin: 0 auto; }
+    .text-center { text-align: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all .2s ease; border: 2px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(107,70,224,.3); }
+    .btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+    .btn-outline:hover { background: var(--primary-light); }
+    .btn-white { background: var(--white); color: var(--primary); border-color: var(--white); }
+    .btn-white:hover { background: var(--primary-light); }
+
+    /* ===== NAVBAR ===== */
+    #navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    #navbar.scrolled { box-shadow: var(--shadow); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav-logo { display: flex; align-items: center; gap: 0px; font-size: 20px; font-weight: 800; color: var(--text-dark); font-family:  Tahoma}
+    .nav-logo-icon { width: 45px; height: 45px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 15px; font-weight: 800; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { font-size: 15px; font-weight: 700; color: var(--text-body); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active { border-bottom: 2px solid var(--primary); padding-bottom: 2px; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text-body); }
+    .nav-phone svg { color: var(--primary); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: all .3s; }
+    .mobile-menu { display: none; flex-direction: column; gap: 0; background: white; border-top: 1px solid var(--border); padding: 16px 24px 24px; }
+    .mobile-menu a { padding: 12px 0; font-size: 16px; font-weight: 500; color: var(--text-body); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { border: none; }
+    .mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
+    .mobile-menu.open { display: flex; }
+
+    /* ===== HERO SECTION ===== */
+    #about-hero {
+      
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #f0ecff 60%, #faf9ff 100%);
+      padding: 80px 0 60px;
+      position: relative; overflow: hidden;
+    
+    }
+    .bg-decoration { position: absolute; border-radius: 50%; opacity: 0.08; pointer-events: none; }
+    .bg-dot-1 { width: 300px; height: 300px; background: #7c3aed; top: 0px; right: 0px; top:-100px }
+    .bg-blob { width: 400px; height: 400px; background: #7c3aed; bottom: -100px; left: -150px; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    #about-hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(107,70,224,.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .about-hero-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 40px; position: relative; z-index: 1; }
+    .about-hero-badge { display: inline-flex; align-items: center; gap: 0px; background: rgb(218, 207, 240); border: 1px solid var(--border); border-radius: 100px; padding: 3px 16px 3px 8px; font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 24px; box-shadow: var(--shadow); animation: slideDown .6s ease-out; }
+    .about-hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%;  display: block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+    @keyframes slideDown { 0%{opacity:0;transform:translateY(-10px);} 100%{opacity:1;transform:translateY(0);} }
+    .about-hero-title { font-size: clamp(32px, 5vw, 54px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; animation: slideDown .6s ease-out .1s backwards; }
+    .about-hero-title span { color: var(--primary); }
+    .about-hero-desc { font-size: 15px; color: var(--text-body); max-width: 520px; margin: 0 auto; animation: slideDown .6s ease-out .2s backwards; }
+
+    /* ===== CTA ===== */
+    #cta { background: var(--primary); padding: 80px 0; position: relative; overflow: hidden; }
+    #cta::before { content: ''; position: absolute; top: -60px; left: -60px; width: 300px; height: 300px; background: rgba(255,255,255,.06); border-radius: 50%; }
+    #cta::after { content: ''; position: absolute; bottom: -80px; right: -40px; width: 400px; height: 400px; background: rgba(255,255,255,.04); border-radius: 50%; }
+    .cta-inner { text-align: center; position: relative; z-index: 1; }
+    .cta-inner h2 { font-size: clamp(28px,4vw,44px); font-weight: 900; color: white; margin-bottom: 16px; }
+    .cta-inner p { color: rgba(255,255,255,.8); font-size: 16px; max-width: 500px; margin: 0 auto 36px; }
+
+    /* ===== FOOTER ===== */
+    #footer { background: var(--dark-footer); color: rgba(255,255,255,.7); padding: 64px 0 0; }
+    .footer-inner { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-brand { }
+    .footer-logo { display: flex; align-items: center; gap: 0px; font-size: 20px; font-weight: 800; color: white; margin-bottom: 16px; }
+    .footer-logo-icon { width: 42px; height: 42px;  border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 800; }
+    .footer-logo-icon img {width:100%;height:100%}
+    .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 220px; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: white; }
+    .footer-contact p { font-size: 14px; display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+    .footer-contact p svg { margin-top: 2px; flex-shrink: 0; color: var(--primary); }
+    .footer-hours { margin-top: 16px; }
+    .footer-hours h5 { font-size: 13px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .footer-hours p { font-size: 13px; margin-bottom: 4px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 13px; }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 13px; }
+    .footer-legal a:hover { color: white; }
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--light-lavender) 0%, rgba(243, 232, 255, 0.8) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -150px;
+            z-index: 0;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .gallery-label {
+            color: var(--primary-purple);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+            line-height: 1.2;
+        }
+
+        .hero-title .highlight {
+            color: var(--primary-purple);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Transformations Section */
+        .transformations-section {
+            padding: 80px 20px;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* .section-label {
+            color: var(--primary-purple);
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 15px;
+        } */
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 15px;
+            color: var(--text-gray);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .transformation-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .transformation-card:nth-child(1) { animation-delay: 0.1s; }
+        .transformation-card:nth-child(2) { animation-delay: 0.2s; }
+        .transformation-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .transformation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-image-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #E8DFF5 0%, #F5F3FF 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .card-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(124, 58, 237, 0.02) 100%);
+        }
+
+        .before-after-badges {
+            display: flex;
+            gap: 12px;
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            z-index: 2;
+        }
+
+        .badge {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-before {
+            background-color: var(--text-gray);
+        }
+
+        .badge-after {
+            background-color: var(--primary-purple);
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* Clinic Interior Section */
+        .clinic-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--light-lavender) 0%, rgba(243, 232, 255, 0.6) 100%);
+        }
+
+        .clinic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .clinic-image-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, #E8DFF5 0%, #F5F3FF 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            cursor: pointer;
+        }
+
+        .clinic-image-container:nth-child(1) { animation-delay: 0.1s; }
+        .clinic-image-container:nth-child(2) { animation-delay: 0.2s; }
+        .clinic-image-container:nth-child(3) { animation-delay: 0.3s; }
+
+        .clinic-image-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .clinic-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(124, 58, 237, 0.02) 100%);
+        }
+
+        .clinic-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 16px;
+                min-height: 300px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .transformations-section {
+                padding: 60px 16px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .section-description {
+                font-size: 14px;
+            }
+
+            .transformations-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .clinic-section {
+                padding: 60px 16px;
+            }
+
+            .clinic-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .clinic-image-container {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 30px 16px;
+                min-height: 250px;
+            }
+
+            .hero-section::before {
+                width: 300px;
+                height: 300px;
+                top: -150px;
+                right: -100px;
+            }
+
+            .hero-section::after {
+                width: 200px;
+                height: 200px;
+                bottom: -80px;
+                left: -80px;
+            }
+
+            .hero-title {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+
+            .gallery-label {
+                font-size: 11px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+
+            .section-label {
+                font-size: 11px;
+            }
+
+            .section-description {
+                font-size: 13px;
+            }
+
+            .transformations-section {
+                padding: 40px 16px;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .transformations-grid {
+                gap: 20px;
+            }
+
+            .card-image-container {
+                height: 240px;
+            }
+
+            .card-content {
+                padding: 16px;
+            }
+
+            .card-title {
+                font-size: 16px;
+            }
+
+            .card-description {
+                font-size: 13px;
+            }
+
+            .clinic-section {
+                padding: 40px 16px;
+            }
+
+            .clinic-grid {
+                gap: 16px;
+            }
+
+            .clinic-image-container {
+                height: 240px;
+            }
+
+            .clinic-image-placeholder {
+                font-size: 12px;
+            }
+        }
+
+        /* Image loading states */
+        .card-image-placeholder.with-image,
+        .clinic-image-placeholder.with-image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#" class="nav-logo" aria-label="DentCare Home">
+        
+        <img class="nav-logo-icon" src="./Assets/img/nrkmultispecislitydentalcarel_logo.svg" >
+        NRK Dental
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about" >About</a></li>
+        <li><a href="services.html" >Services</a></li>
+        <li><a href="index.html#team">Our Team</a></li>
+        <li><a href="index.html#testimonials" class="active">Gallery</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <!-- <a href="tel:+918248203459" class="nav-phone" aria-label="Call us at (123) 456-7890">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (123) 456-7890
+        </a> -->
+        <a href="./appointment.html" class="btn btn-primary" style="padding: 5px 10px; font-size: 13px;">Book Appointment</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#team">Our Team</a>
+    <a href="index.html#testimonials">Gallery</a>
+    <a href="#cta">Contact</a>
+    <!-- <a href="tel:+918248203459" style="color:var(--primary);">📞 (123) 456-7890</a> -->
+    <a href="./appointment.html" class="btn btn-primary">Book Appointment</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== ABOUT HERO ===== -->
+<section id="about-hero" aria-labelledby="about-heading">
+  <div class="bg-decoration bg-dot-1"></div>
+  <div class="bg-decoration bg-blob"></div>
+  <div class="container">
+    <div class="about-hero-inner">
+      <!-- <span class="about-hero-badge" style="color:var(--primary-dark)">Gallery</span> -->
+      <h1 id="about-heading" class="about-hero-title">Our Clinic & <span class="highlight">Results</span></h1>
+      <p class="about-hero-desc">Take a look at our modern facility and the beautiful smiles we've helped create.</p>
+    </div>
+  </div>
+
+</section>
+    <!-- Hero Section -->
+    <!-- <section class="hero-section">
+        <div class="hero-content">
+            <span class="gallery-label">Gallery</span>
+            <h1 class="hero-title">Our Clinic & <span class="highlight">Results</span></h1>
+            <p class="hero-subtitle">Take a look at our modern facility and the beautiful smiles we've helped create.</p>
+        </div>
+    </section> -->
+
+    <!-- Transformations Section -->
+    <section class="transformations-section">
+        <div class="section-header">
+            <span class="section-label">Transformations</span>
+            <h2 class="section-title">Before & After</h2>
+            <p class="section-description">See the transformative results of our dental treatments.</p>
+        </div>
+
+        <div class="transformations-grid">
+            <!-- Card 1: Teeth Whitening -->
+            <div class="transformation-card">
+                <div class="card-image-container">
+                    <div class="card-image-placeholder">
+                        <img src="./Assets/img/No Date (2).jpg">
+                    </div>
+                    <!-- <div class="before-after-badges">
+                        <span class="badge badge-before">Before</span>
+                        <span class="badge badge-after">After</span>
+                    </div> -->
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Smile Designing</h3>
+                    <p class="card-description">Professional Smile Designing for better smile</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Dental Veneers -->
+            <div class="transformation-card">
+                <div class="card-image-container">
+                    <div class="card-image-placeholder">
+                        <img src="./Assets/img/No Date.jpg">
+                    </div>
+                    <!-- <div class="before-after-badges">
+                        <span class="badge badge-before">Before</span>
+                        <span class="badge badge-after">After</span>
+                    </div> -->
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Smile Designing</h3>
+                    <p class="card-description">Professional Smile Designing for better smile</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Orthodontics -->
+            <div class="transformation-card">
+                <div class="card-image-container">
+                    <div class="card-image-placeholder">
+                        <img src="./Assets/img/No Date (2).jpg">
+                    </div>
+                    <!-- <div class="before-after-badges">
+                        <span class="badge badge-before">Before</span>
+                        <span class="badge badge-after">After</span>
+                    </div> -->
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Smile Designing</h3>
+                    <p class="card-description">Professional Smile Designing for better smile</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinic Interior Section -->
+    <section class="clinic-section">
+        <div class="section-header">
+            <span class="section-label">Tour Our Space</span>
+            <h2 class="section-title">Clinic Interior</h2>
+            <p class="section-description">A modern, comfortable environment designed for your care.</p>
+        </div>
+
+        <div class="clinic-grid">
+            <!-- Clinic Image 1 -->
+            <div class="clinic-image-container">
+                <div class="clinic-image-placeholder">
+                    <img src="./Assets/img/IMG_0037.jpg" >
+                </div>
+            </div>
+
+            <!-- Clinic Image 2 -->
+            <div class="clinic-image-container">
+                <div class="clinic-image-placeholder">
+                    <img src="./Assets/img/IMG_0041.jpg">
+                </div>
+            </div>
+
+            <!-- Clinic Image 3 -->
+            <div class="clinic-image-container">
+                <div class="clinic-image-placeholder">
+                    <img src="./Assets/img/IMG_0042.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+<section id="cta" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+    <h2 id="cta-heading">Book Your Appointment Today</h2>
+    <p>Take the first step towards a healthier, more beautiful smile. Our team is ready to welcome you.</p>
+    <a href="./appointment.html" class="btn btn-white">Schedule Your Visit</a>
+  </div>
+</section>
+
+</main>
+<!-- ===== FOOTER ===== -->
+<footer id="footer" role="contentinfo" itemscope itemtype="https://schema.org/Dentist">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand text-center">
+        <div class="footer-logo text-center">
+          <div class="footer-logo-icon">
+            <img src="./Assets/img/nrk_logo.png">
+          </div>
+          <span itemprop="name">NRK Dental</span>
+        </div>
+        <p class="text-center" style = "font-size:12px; font-weight:300"itemprop="description">Providing exceptional dental carein Salem with modern technology and a compassionate approach.</br> Your smile is our priority.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="index.html#testimonials">Gallery</a></li>
+          <li><a href="index.html#footer">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">General Dentistry</a></li>
+          <li><a href="index.html#services">Cosmetic Dentistry</a></li>
+          <li><a href="index.html#services">Orthodontics</a></li>
+          <li><a href="index.html#services">Dental Implants</a></li>
+          <li><a href="index.html#services">Teeth Whitening</a></li>
+          <li><a href="index.html#services">Root Canal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">1st Floor, Valmo Office, Sarada College Rd, Ponnandigounder Nagar,</span>,
+            <span itemprop="addressLocality">LRN Colony, Salem, </span>
+            <span itemprop="postalCode"> Tamil Nadu 636007</span>
+          </span>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+918248203459" itemprop="telephone" style="color:inherit;">8248203459</a>
+        </p>
+        <p>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@dentcare.com" itemprop="email" style="color:inherit;">info@dentcare.com</a>
+        </p>
+        <div class="footer-hours">
+          <h5>Business Hours</h5>
+          <p>Mon – Sat : 10:00 AM – 8:30 PM</p>
+          <p>Sun : Closed</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="color:#6b7280">
+      <p>© <span id="year"></span> NRK Multispeciality Dental Care. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+    <script>
+        // Dynamic year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Intersection observer for fade-in animations
+  const fadeEls = document.querySelectorAll('.fade-in-up, .stat-item');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  fadeEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    fadeObserver.observe(el);
+  });
+
+ 
+        // Smooth scroll behavior for badges and hover effects
+        document.querySelectorAll('.transformation-card, .clinic-image-container').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add image loading functionality
+        function loadImage(placeholderElement, imageSrc) {
+            if (imageSrc) {
+                placeholderElement.style.backgroundImage = `url('${imageSrc}')`;
+                placeholderElement.classList.add('with-image');
+                placeholderElement.textContent = '';
+            }
+        }
+
+        // Example: Uncomment to load images when you have the URLs
+        // const transformationImages = [
+        //     { placeholder: document.querySelectorAll('.card-image-placeholder')[0], src: 'path/to/image1.jpg' },
+        //     { placeholder: document.querySelectorAll('.card-image-placeholder')[1], src: 'path/to/image2.jpg' },
+        //     { placeholder: document.querySelectorAll('.card-image-placeholder')[2], src: 'path/to/image3.jpg' }
+        // ];
+        // transformationImages.forEach(img => loadImage(img.placeholder, img.src));
+    </script>
+
+
+</body>
+</html>
